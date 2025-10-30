@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import NavBar from "../components/navbar/NavBar.astro";
 ---
 
 <!doctype html>
@@ -10,7 +11,8 @@ import "../styles/global.css";
         <title>Regis Orate</title>
         <link rel="icon" href="favicon.svg" type="image/x-icon" />
     </head>
-    <body>
+    <body class="bg-background-100">
+        <NavBar />
         <slot>
             <div class="h-screen flex flex-col justify-center items-center">
                 <span class="text-6xl"><code>layouts/MainLayout</code></span>

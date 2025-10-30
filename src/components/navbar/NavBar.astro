@@ -1,0 +1,13 @@
+---
+import NavBarFull from "./NavBarFull.astro";
+import NavBarMobile from "./NavBarMobile.astro";
+---
+
+<nav>
+    <div class="block md:hidden mx-auto px-4">
+        <NavBarMobile />
+    </div>
+    <div class="hidden md:block mx-auto px-4">
+        <NavBarFull />
+    </div>
+</nav>
