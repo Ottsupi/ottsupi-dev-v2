@@ -44,7 +44,10 @@
         </div>
     </li>
     <li class="border-b-2 border-s-2 border-background-400">
-        <div class="size-full flex justify-center items-center p-3">
+        <button
+            x-on:click="switchTheme()"
+            class="size-full flex justify-center items-center p-3"
+        >
             <span class="text-background-500">
                 <span class="select-none">
                     <svg
@@ -70,6 +73,6 @@
                     </svg>
                 </span>
             </span>
-        </div>
+        </button>
     </li>
 </ul>

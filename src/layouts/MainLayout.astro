@@ -4,14 +4,100 @@ import NavBar from "../components/navbar/NavBar.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+    lang="en"
+    x-data="{
+        THEMES: {
+            SYSTEM: 'system',
+            LIGHT: 'light',
+            DARK: 'dark',
+        },
+        STORAGE_KEYS: {
+            SAVED_THEME: 'saved_theme',
+        },
+        currentTheme: null,
+        switchTheme() {
+            console.debug(`Switching theme from 'currentTheme': ${this.currentTheme}`);
+            if (this.currentTheme == this.THEMES.LIGHT) {
+                this.currentTheme = this.THEMES.DARK;
+            } else if (this.currentTheme == this.THEMES.DARK) {
+                this.currentTheme = this.THEMES.LIGHT;
+            } else {
+                this.currentTheme = this.THEMES.SYSTEM;
+            }
+            console.debug(`Updated 'currentTheme': ${this.currentTheme}`);
+            this.updateSavedThemeBasedOnPreference();
+        },
+        updateSavedThemeBasedOnPreference() {
+            const preferredTheme =
+                window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? this.THEMES.DARK
+                : this.THEMES.LIGHT;
+            if (this.currentTheme == preferredTheme) {
+                localStorage.setItem(this.STORAGE_KEYS.SAVED_THEME, this.THEMES.SYSTEM);
+            } else {
+                localStorage.setItem(this.STORAGE_KEYS.SAVED_THEME, this.currentTheme);
+            }
+            const currentSavedTheme = localStorage.getItem(this.STORAGE_KEYS.SAVED_THEME);
+            console.debug(`Updated 'localStorage.${this.STORAGE_KEYS.SAVED_THEME}': ${currentSavedTheme}`);
+        },
+    }"
+    x-init="
+        const savedTheme = localStorage.getItem(STORAGE_KEYS.SAVED_THEME);
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        console.debug(`'savedTheme': ${savedTheme}`);
+        console.debug(`'prefersDark': ${prefersDark}`);
+
+        if (savedTheme == THEMES.SYSTEM) {
+            currentTheme = prefersDark ? THEMES.DARK : THEMES.LIGHT;
+        } else if (savedTheme == THEMES.LIGHT) {
+            currentTheme = THEMES.LIGHT;
+        } else if (savedTheme == THEMES.DARK) {
+            currentTheme = THEMES.DARK;
+        } else {
+            currentTheme = THEMES.SYSTEM;
+        }
+        console.debug(`Initial 'currentTheme': ${currentTheme}`);
+
+        window.matchMedia('(prefers-color-scheme: dark)').addListener((prefersDark) => {
+            console.debug(`Updated 'prefersDark': ${prefersDark.matches}`);
+            const preferredTheme = prefersDark.matches
+                ? THEMES.DARK
+                : THEMES.LIGHT;
+            if (preferredTheme != currentTheme) {
+                console.debug('Preference updated, switching theme...')
+                switchTheme();
+            } else {
+                console.debug('Preference updated, same as current theme...')
+                updateSavedThemeBasedOnPreference();
+            }
+        });
+    "
+    x-bind:class="{ 'dark': currentTheme == THEMES.DARK }"
+>
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Regis Orate</title>
         <link rel="icon" href="favicon.svg" type="image/x-icon" />
+
+        <!-- Script to immediately set theme mode to prevent light/dark flash -->
+        <script is:inline>
+            console.debug("Running script block to set theme mode ASAP...");
+            const savedTheme = localStorage.getItem("saved_theme") || "system";
+            const isDarkInitial =
+                savedTheme == "system"
+                    ? window.matchMedia("(prefers-color-scheme: dark)").matches
+                    : savedTheme == "dark";
+            if (isDarkInitial) document.documentElement.classList.add("dark");
+            console.debug(`Initial theme is ${savedTheme}`);
+            console.debug(`Set to dark theme: ${isDarkInitial}`);
+            console.debug("Finished script block to set theme mode ASAP...");
+        </script>
     </head>
-    <body class="bg-background-100">
+    <body
+        class="bg-background-100 dark:bg-background-900 transition-colors duration-300"
+    >
         <NavBar />
         <slot>
             <div class="h-screen flex flex-col justify-center items-center">
