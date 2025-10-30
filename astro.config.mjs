@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import alpinejs from '@astrojs/alpinejs';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -9,6 +10,10 @@ export default defineConfig({
       host: '0.0.0.0',
       port: 4321,
   },
+
+  integrations: [
+    alpinejs(),
+  ],
 
   vite: {
     plugins: [tailwindcss()],
