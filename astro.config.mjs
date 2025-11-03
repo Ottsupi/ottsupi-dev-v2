@@ -12,7 +12,7 @@ export default defineConfig({
   },
 
   integrations: [
-    alpinejs(),
+    alpinejs({entrypoint : '/alpine-entrypoint'}),
   ],
 
   vite: {
