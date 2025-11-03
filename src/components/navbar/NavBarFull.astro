@@ -2,60 +2,135 @@
 import ThemeIcon from "../ThemeIcon.astro";
 ---
 
-<ul class="grid grid-cols-6">
-    <li class="border-b-2 border-e-2 border-background-400">
-        <div class="size-full flex justify-center items-center p-3">
-            <span class="text-background-500">
-                <span
-                    class="text-xl font-mono font-medium uppercase select-none"
-                >
-                    Home
-                </span>
+<ul class="grid grid-cols-6 group/navbar">
+    <li
+        class:list={[
+            "group/navitem",
+            "border-b-2 border-e-2",
+            "border-background-300 dark:border-background-700",
+            "group-hover/navbar:border-background-400 dark:group-hover/navitem:border-background-600",
+            "hover:border-b-accent-500",
+            "transition-colors",
+        ]}
+    >
+        <div
+            class="size-full flex justify-center items-center p-3 cursor-pointer"
+        >
+            <span
+                class:list={[
+                    "text-xl font-mono font-medium uppercase select-none",
+                    "text-background-400 dark:text-background-600",
+                    "group-hover/navbar:text-background-500",
+                    "group-hover/navitem:text-accent-500",
+                    "transition-colors",
+                ]}
+            >
+                Home
             </span>
         </div>
     </li>
-    <li class="border-b-2 border-e-2 border-background-400">
-        <div class="size-full flex justify-center items-center p-3">
-            <span class="text-background-500">
-                <span
-                    class="text-xl font-mono font-medium uppercase select-none"
-                >
-                    Blog
-                </span>
+    <li
+        class:list={[
+            "group/navitem",
+            "border-b-2 border-e-2",
+            "border-background-300 dark:border-background-700",
+            "group-hover/navbar:border-background-400 dark:group-hover/navitem:border-background-600",
+            "hover:border-b-accent-500",
+            "transition-colors",
+        ]}
+    >
+        <div
+            class="size-full flex justify-center items-center p-3 cursor-pointer"
+        >
+            <span
+                class:list={[
+                    "text-xl font-mono font-medium uppercase select-none",
+                    "text-background-400 dark:text-background-600",
+                    "group-hover/navbar:text-background-500",
+                    "group-hover/navitem:text-accent-500",
+                    "transition-colors",
+                ]}
+            >
+                Blog
             </span>
         </div>
     </li>
-    <li class="col-span-2 border-b-2 border-background-400">
-        <div class="size-full flex justify-center items-center p-3">
-            <span class="text-background-500">
-                <span
-                    class="text-xl font-mono font-medium uppercase select-none"
-                >
-                    ottsupi.dev
-                </span>
+    <li
+        class:list={[
+            "col-span-2 group/navitem",
+            "border-b-2",
+            "border-background-300 dark:border-background-700",
+            "group-hover/navbar:border-background-400 dark:group-hover/navitem:border-background-600",
+            "hover:border-b-accent-500",
+            "transition-colors",
+        ]}
+    >
+        <div
+            class="size-full flex justify-center items-center p-3 cursor-pointer"
+        >
+            <span
+                class:list={[
+                    "text-xl font-mono font-medium uppercase select-none",
+                    "text-background-400 dark:text-background-600",
+                    "group-hover/navbar:text-background-500",
+                    "group-hover/navitem:text-accent-500",
+                    "transition-colors",
+                ]}
+            >
+                ottsupi.dev
             </span>
         </div>
     </li>
-    <li class="border-b-2 border-s-2 border-background-400">
-        <div class="size-full flex justify-center items-center p-3">
-            <span class="text-background-500">
-                <span
-                    class="text-xl font-mono font-medium uppercase select-none"
-                >
-                    Resume
-                </span>
+    <li
+        class:list={[
+            "group/navitem",
+            "border-b-2 border-s-2",
+            "border-background-300 dark:border-background-700",
+            "group-hover/navbar:border-background-400 dark:group-hover/navitem:border-background-600",
+            "hover:border-b-accent-500",
+            "transition-colors",
+        ]}
+    >
+        <div
+            class="size-full flex justify-center items-center p-3 cursor-pointer"
+        >
+            <span
+                class:list={[
+                    "text-xl font-mono font-medium uppercase select-none",
+                    "text-background-400 dark:text-background-600",
+                    "group-hover/navbar:text-background-500",
+                    "group-hover/navitem:text-accent-500",
+                    "transition-colors",
+                ]}
+            >
+                Resume
             </span>
         </div>
     </li>
-    <li class="border-b-2 border-s-2 border-background-400">
+    <li
+        class:list={[
+            "group/navitem",
+            "border-b-2 border-s-2",
+            "border-background-300 dark:border-background-700",
+            "group-hover/navbar:border-background-400 dark:group-hover/navitem:border-background-600",
+            "hover:border-b-accent-500",
+            "transition-colors",
+        ]}
+    >
         <button
-            class="size-full flex justify-center items-center p-3"
+            class="size-full flex justify-center items-center p-3 cursor-pointer"
             x-on:click="switchTheme()"
         >
-            <span class="text-background-500">
-                <span class="select-none">
-                    <ThemeIcon />
-                </span>
+            <span
+                class:list={[
+                    "select-none",
+                    "text-background-400 dark:text-background-600",
+                    "group-hover/navbar:text-background-500",
+                    "group-hover/navitem:text-accent-500",
+                    "transition-colors",
+                ]}
+            >
+                <ThemeIcon />
             </span>
         </button>
     </li>

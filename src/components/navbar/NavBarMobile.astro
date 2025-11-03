@@ -3,9 +3,25 @@ import ThemeIcon from "../ThemeIcon.astro";
 ---
 
 <ul class="grid grid-cols-4">
-    <li class="border-b-2 border-e-2 border-background-400">
-        <div class="size-full flex justify-center items-center p-3">
-            <span class="text-background-500">
+    <li
+        class:list={[
+            "border-b-2 border-e-2",
+            "border-background-400 dark:border-background-600",
+            "hover:border-b-accent-500",
+            "transition-colors",
+        ]}
+    >
+        <div
+            class="size-full flex justify-center items-center p-3 cursor-pointer"
+        >
+            <span
+                class:list={[
+                    "select-none",
+                    "text-background-500",
+                    "group-hover/navitem:text-accent-500",
+                    "transition-colors",
+                ]}
+            >
                 <span class="select-none">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -27,26 +43,51 @@ import ThemeIcon from "../ThemeIcon.astro";
             </span>
         </div>
     </li>
-    <li class="col-span-2 border-b-2 border-background-400">
-        <div class="size-full flex justify-center items-center p-3">
-            <span class="text-background-500">
-                <span
-                    class="text-xl font-header font-medium uppercase select-none"
-                >
-                    ottsupi.dev
-                </span>
+    <li
+        class:list={[
+            "col-span-2",
+            "border-b-2",
+            "border-background-400 dark:border-background-600",
+            "hover:border-b-accent-500",
+            "transition-colors",
+        ]}
+    >
+        <div
+            class="size-full flex justify-center items-center p-3 cursor-pointer"
+        >
+            <span
+                class:list={[
+                    "text-xl font-mono font-medium uppercase select-none",
+                    "text-background-500",
+                    "group-hover/navitem:text-accent-500",
+                    "transition-colors",
+                ]}
+            >
+                ottsupi.dev
             </span>
         </div>
     </li>
-    <li class="border-b-2 border-s-2 border-background-400">
+    <li
+        class:list={[
+            "border-b-2 border-s-2",
+            "border-background-400 dark:border-background-600",
+            "hover:border-b-accent-500",
+            "transition-colors",
+        ]}
+    >
         <button
-            class="size-full flex justify-center items-center p-3"
+            class="size-full flex justify-center items-center p-3 cursor-pointer"
             x-on:click="switchTheme()"
         >
-            <span class="text-background-500">
-                <span class="select-none">
-                    <ThemeIcon />
-                </span>
+            <span
+                class:list={[
+                    "select-none",
+                    "text-background-500",
+                    "group-hover/navitem:text-accent-500",
+                    "transition-colors",
+                ]}
+            >
+                <ThemeIcon />
             </span>
         </button>
     </li>
