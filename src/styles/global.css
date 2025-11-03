@@ -87,3 +87,7 @@
     --font-body: "IBM Plex Sans", "sans";
     --font-code: "IBM Plex Mono", "mono";
 }
+
+[x-cloak] {
+    display: none !important;
+}
