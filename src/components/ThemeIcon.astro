@@ -10,8 +10,9 @@
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="lucide lucide-sun-moon-icon lucide-sun-moon"
-        x-show="currentTheme == THEMES.SYSTEM"
+        class="lucide lucide-sun-moon-icon lucide-sun-moon transition-all duration-300 ease-in-out"
+        x-bind:class="currentTheme == THEMES.SYSTEM ? 'w-auto opacity-100' : 'w-0 opacity-0'"
+        x-cloak
     >
         <path d="M12 2v2"></path>
         <path
@@ -34,8 +35,8 @@
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="lucide lucide-sun-icon lucide-sun"
-        x-show="currentTheme == THEMES.LIGHT"
+        class="lucide lucide-sun-icon lucide-sun transition-all duration-300 ease-in-out"
+        x-bind:class="currentTheme == THEMES.LIGHT ? 'w-auto opacity-100' : 'w-0 opacity-0'"
         x-cloak
     >
         <circle cx="12" cy="12" r="4"></circle>
@@ -60,8 +61,8 @@
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="lucide lucide-moon-icon lucide-moon"
-        x-show="currentTheme == THEMES.DARK"
+        class="lucide lucide-moon-icon lucide-moon transition-all duration-300 ease-in-out"
+        x-bind:class="currentTheme == THEMES.DARK ? 'w-auto opacity-100' : 'w-0 opacity-0'"
         x-cloak
         ><path
             d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
