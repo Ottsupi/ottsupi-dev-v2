@@ -1,94 +1,178 @@
 ---
 import ThemeIcon from "../ThemeIcon.astro";
+
+// The variable `isMobileNavMenuOpen` is defined in the parent element NavBar.astro
 ---
 
-<ul class="grid grid-cols-4">
-    <li
-        class:list={[
-            "border-b-2 border-e-2",
-            "border-background-400 dark:border-background-600",
-            "hover:border-b-accent-500",
-            "transition-colors",
-        ]}
-    >
-        <div
-            class="size-full flex justify-center items-center p-3 cursor-pointer"
+<div class="flex flex-col">
+    <ul class="grid grid-cols-4">
+        <li
+            class:list={[
+                "group/navitem",
+                "border-b-2 border-e-2",
+                "border-background-400 dark:border-background-600",
+                "hover:border-b-accent-500",
+                "transition-colors",
+            ]}
         >
-            <span
-                class:list={[
-                    "select-none",
-                    "text-background-500",
-                    "group-hover/navitem:text-accent-500",
-                    "transition-colors",
-                ]}
+            <button
+                class="size-full flex justify-center items-center p-3 cursor-pointer"
+                x-on:click="isMobileNavMenuOpen = !isMobileNavMenuOpen"
             >
-                <span class="select-none">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-menu-icon lucide-menu"
-                    >
-                        <path d="M4 5h16"></path>
-                        <path d="M4 12h16"></path>
-                        <path d="M4 19h16"></path>
-                    </svg>
+                <span
+                    class:list={[
+                        "select-none",
+                        "text-background-500",
+                        "group-hover/navitem:text-accent-500",
+                        "transition-colors",
+                    ]}
+                    x-bind:class="[ isMobileNavMenuOpen && '!text-accent-500' ]"
+                >
+                    <span class="select-none">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-menu-icon lucide-menu"
+                        >
+                            <path d="M4 5h16"></path>
+                            <path d="M4 12h16"></path>
+                            <path d="M4 19h16"></path>
+                        </svg>
+                    </span>
                 </span>
-            </span>
-        </div>
-    </li>
-    <li
-        class:list={[
-            "col-span-2",
-            "border-b-2",
-            "border-background-400 dark:border-background-600",
-            "hover:border-b-accent-500",
-            "transition-colors",
-        ]}
-    >
-        <div
-            class="size-full flex justify-center items-center p-3 cursor-pointer"
+            </button>
+        </li>
+        <li
+            class:list={[
+                "col-span-2 group/navitem",
+                "border-b-2",
+                "border-background-400 dark:border-background-600",
+                "hover:border-b-accent-500",
+                "transition-colors",
+            ]}
         >
-            <span
-                class:list={[
-                    "text-xl font-mono font-medium uppercase select-none",
-                    "text-background-500",
-                    "group-hover/navitem:text-accent-500",
-                    "transition-colors",
-                ]}
+            <div
+                class="size-full flex justify-center items-center p-3 cursor-pointer"
             >
-                ottsupi.dev
-            </span>
-        </div>
-    </li>
-    <li
-        class:list={[
-            "border-b-2 border-s-2",
-            "border-background-400 dark:border-background-600",
-            "hover:border-b-accent-500",
-            "transition-colors",
-        ]}
-    >
-        <button
-            class="size-full flex justify-center items-center p-3 cursor-pointer"
-            x-on:click="switchTheme()"
+                <span
+                    class:list={[
+                        "text-xl font-mono font-medium uppercase select-none",
+                        "text-background-500",
+                        "group-hover/navitem:text-accent-500",
+                        "transition-colors",
+                    ]}
+                >
+                    ottsupi.dev
+                </span>
+            </div>
+        </li>
+        <li
+            class:list={[
+                "group/navitem",
+                "border-b-2 border-s-2",
+                "border-background-400 dark:border-background-600",
+                "hover:border-b-accent-500",
+                "transition-colors",
+            ]}
         >
-            <span
-                class:list={[
-                    "select-none",
-                    "text-background-500",
-                    "group-hover/navitem:text-accent-500",
-                    "transition-colors",
-                ]}
+            <button
+                class="size-full flex justify-center items-center p-3 cursor-pointer"
+                x-on:click="switchTheme()"
             >
-                <ThemeIcon />
-            </span>
-        </button>
-    </li>
-</ul>
+                <span
+                    class:list={[
+                        "select-none",
+                        "text-background-500",
+                        "group-hover/navitem:text-accent-500",
+                        "transition-colors",
+                    ]}
+                >
+                    <ThemeIcon />
+                </span>
+            </button>
+        </li>
+    </ul>
+    <ul
+        class="px-3 transition-all duration-300"
+        x-show="isMobileNavMenuOpen"
+        x-collapse
+    >
+        <li
+            class:list={[
+                "group/navitem",
+                "border-b-2",
+                "border-background-400 dark:border-background-600",
+                "hover:border-b-accent-500",
+                "transition-colors",
+            ]}
+        >
+            <div
+                class="size-full flex justify-center items-center pt-3 pb-2 cursor-pointer"
+            >
+                <span
+                    class:list={[
+                        "text-lg font-mono font-medium uppercase select-none",
+                        "text-background-500",
+                        "group-hover/navitem:text-accent-500",
+                        "transition-colors",
+                    ]}
+                >
+                    Home
+                </span>
+            </div>
+        </li><li
+            class:list={[
+                "group/navitem",
+                "border-b-2",
+                "border-background-400 dark:border-background-600",
+                "hover:border-b-accent-500",
+                "transition-colors",
+            ]}
+        >
+            <div
+                class="size-full flex justify-center items-center pt-3 pb-2 cursor-pointer"
+            >
+                <span
+                    class:list={[
+                        "text-lg font-mono font-medium uppercase select-none",
+                        "text-background-500",
+                        "group-hover/navitem:text-accent-500",
+                        "transition-colors",
+                    ]}
+                >
+                    Blog
+                </span>
+            </div>
+        </li><li
+            class:list={[
+                "group/navitem",
+                "border-b-2",
+                "border-background-400 dark:border-background-600",
+                "hover:border-b-accent-500",
+                "transition-colors",
+            ]}
+        >
+            <div
+                class="size-full flex justify-center items-center pt-3 pb-2 cursor-pointer"
+            >
+                <span
+                    class:list={[
+                        "text-lg font-mono font-medium uppercase select-none",
+                        "text-background-500",
+                        "group-hover/navitem:text-accent-500",
+                        "transition-colors",
+                    ]}
+                >
+                    Resume
+                </span>
+            </div>
+        </li>
+    </ul>
+</div>

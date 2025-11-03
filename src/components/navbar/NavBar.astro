@@ -6,14 +6,16 @@ import NavBarMobile from "./NavBarMobile.astro";
 <nav
     class:list={[
         "fixed w-full",
-        "bg-background-100/40 dark:bg-background-900/40 ",
-        "hover:bg-background-100/80 dark:hover:bg-background-900/80 ",
+        "max-md:bg-background-100  max-md:dark:bg-background-900",
+        "bg-background-100/40 dark:bg-background-900/40",
+        "hover:bg-background-100 dark:hover:bg-background-900",
         "backdrop-blur-lg transition-all duration-300",
     ]}
     x-bind:class="[ isNavVisible ? 'top-0' : 'top-[-4rem]' ]"
     x-data="{
         lastScrollPosition: window.pageYOffset,
         isNavVisible: true,
+        isMobileNavMenuOpen: false,
         scrollHandler() {
             const currentScrollPosition = window.pageYOffset;
             if (currentScrollPosition == 0) {
@@ -23,6 +25,8 @@ import NavBarMobile from "./NavBarMobile.astro";
             } else if (currentScrollPosition > this.lastScrollPosition) {
                 this.isNavVisible = false;
             }
+            // Close mobile nav menu on scroll
+            this.isMobileNavMenuOpen = false;
             this.lastScrollPosition = currentScrollPosition;
         }
     }"
