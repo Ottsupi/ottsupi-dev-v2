@@ -1,0 +1,17 @@
+---
+import BussinessCardFull from "./BussinessCardFull.astro";
+import BussinessCardSmall from "./BussinessCardSmall.astro";
+---
+
+<div
+    class="size-full flex flex-col justify-center items-center"
+    x-data="{ width: 0 }"
+    x-resize="width = $width"
+>
+    <template x-if="width >= 377">
+        <BussinessCardFull />
+    </template>
+    <template x-if="width < 377">
+        <BussinessCardSmall />
+    </template>
+</div>
