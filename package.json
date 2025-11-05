@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "@alpinejs/collapse": "^3.15.1",
+    "@alpinejs/resize": "^3.15.1",
     "@astrojs/alpinejs": "^0.4.9",
     "@tailwindcss/vite": "^4.1.13",
+    "@types/alpinejs__collapse": "^3.13.4",
+    "@types/alpinejs__resize": "^3.14.0",
     "astro": "^5.14.1",
     "tailwindcss": "^4.1.13"
   }
