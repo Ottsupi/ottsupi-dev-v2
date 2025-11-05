@@ -88,6 +88,28 @@
     --font-code: "IBM Plex Mono", "mono";
 }
 
+@layer components {
+    .ott-typography {
+        p,
+        span {
+            font-family: var(--font-sans);
+            font-size: 1.125rem;
+            color: var(--color-text-700);
+
+            @variant dark {
+                color: var(--color-text-300);
+            }
+        }
+
+        svg {
+            stroke: var(--color-text-700);
+            @variant dark {
+                stroke: var(--color-text-300);
+            }
+        }
+    }
+}
+
 [x-cloak] {
     display: none !important;
 }
