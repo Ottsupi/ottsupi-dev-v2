@@ -1,0 +1,36 @@
+---
+import ImageAltDark from "../ImageAltDark.astro";
+
+interface Props {
+    title: string;
+    subTitle: string;
+    logo: ImageMetadata;
+    logoDark?: ImageMetadata;
+}
+
+const { title, subTitle, logo, logoDark } = Astro.props;
+---
+
+<div class="flex flex-row p-2 space-x-3 items-center">
+    <div
+        class:list={[
+            "size-14 rounded-xl shrink-0",
+            "flex justify-center items-center",
+            "bg-background-50 dark:bg-background-800",
+            "transition-colors duration-200",
+        ]}
+    >
+        <ImageAltDark
+            src={logo}
+            srcDark={logoDark}
+            alt={title + " logo"}
+            class="size-10"
+        />
+    </div>
+    <div class="flex flex-col">
+        <span class="text-text-700 dark:text-text-300">{title}</span>
+        <span class="w-fit text-sm text-text-600 dark:text-text-400">
+            {subTitle}
+        </span>
+    </div>
+</div>

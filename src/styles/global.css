@@ -108,6 +108,26 @@
             }
         }
     }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        border-width: 2px;
+        box-shadow: var(--shadow-md);
+        transition-property: color, background-color, border-color,
+            outline-color, text-decoration-color, fill, stroke,
+            --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+        transition-timing-function: var(--default-transition-timing-function);
+        transition-duration: var(--default-transition-duration);
+
+        border-color: var(--color-background-400);
+        background-color: var(--color-background-100);
+
+        @variant dark {
+            border-color: var(--color-background-600);
+            background-color: var(--color-background-900);
+        }
+    }
 }
 
 [x-cloak] {

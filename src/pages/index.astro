@@ -2,13 +2,28 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import BussinessCardFull from "../components/bussiness_card/BussinessCardFull.astro";
 import BussinessCardSmall from "../components/bussiness_card/BussinessCardSmall.astro";
+import TechStackCard from "../components/career_page/TechStackCard.astro";
+import TechStackCardItem from "../components/career_page/TechStackCardItem.astro";
+
+import logoAwsDark from "../assets/images/career_page/logo_aws_white.png";
+import logoAwsLight from "../assets/images/career_page/logo_aws_black.png";
+import logoDjango from "../assets/images/career_page/logo_django.png";
+import logoDocker from "../assets/images/career_page/logo_docker.png";
+import logoFlutter from "../assets/images/career_page/logo_flutter.png";
+import logoGcp from "../assets/images/career_page/logo_gcp.png";
+import logoMariaDBDark from "../assets/images/career_page/logo_mariadb_white.png";
+import logoMariaDBLight from "../assets/images/career_page/logo_mariadb_black.png";
+import logoPostgre from "../assets/images/career_page/logo_psql.png";
+import logoSpringBoot from "../assets/images/career_page/logo_springboot.png";
+import logoTailwind from "../assets/images/career_page/logo_tailwind.png";
+import logoVue from "../assets/images/career_page/logo_vue.png";
 ---
 
 <MainLayout>
     <!-- Hero Section -->
     <section class="max-w-lg mx-auto">
         <div
-            class="min-h-[64vh] flex flex-col md:flex-row justify-center items-center gap-6 p-8"
+            class="min-h-[64vh] max-h-[64rem] flex flex-col md:flex-row justify-center items-center gap-6 p-8"
         >
             <div class="flex flex-row justify-center md:justify-end">
                 <div
@@ -179,7 +194,145 @@ import BussinessCardSmall from "../components/bussiness_card/BussinessCardSmall.
             </div>
         </div>
     </section>
-    <hr />
+
+    <!-- Tech Stack -->
+    <section class="max-w-lg mx-auto">
+        <div class="flex flex-col px-3 mb-4">
+            <h2
+                class="font-header font-semibold text-text-700 dark:text-text-300 text-2xl"
+            >
+                Tech Stack
+            </h2>
+            <p class="font-body text-text-700 dark:text-text-300">
+                I'm always open to learn new things.
+            </p>
+        </div>
+        <div class="grid grid-cols-3 px-3 gap-3">
+            <TechStackCard title="eCommerce App" subTitle="Backend | API | Web">
+                <TechStackCardItem
+                    title="nopCommerce"
+                    subTitle="eCommerce Platform"
+                    logo={logoDjango}
+                />
+                <TechStackCardItem
+                    title=".Net Framework"
+                    subTitle="C# Backend"
+                    logo={logoDjango}
+                />
+                <TechStackCardItem
+                    title="Angular.js"
+                    subTitle="Javascript Frontend"
+                    logo={logoDjango}
+                />
+                <TechStackCardItem
+                    title="MS SQL"
+                    subTitle="Relational Database"
+                    logo={logoDjango}
+                />
+            </TechStackCard>
+            <TechStackCard
+                title="Payment Gateway Mobile App"
+                subTitle="Backend | API | Mobile | DevOps"
+            >
+                <TechStackCardItem
+                    title="Django"
+                    subTitle="Python Backend"
+                    logo={logoDjango}
+                />
+                <TechStackCardItem
+                    title="Flutter"
+                    subTitle="Mobile Frontend"
+                    logo={logoFlutter}
+                />
+                <TechStackCardItem
+                    title="PostgreSQL"
+                    subTitle="Relational Database"
+                    logo={logoPostgre}
+                />
+                <TechStackCardItem
+                    title="Google Cloud Platform"
+                    subTitle="Cloud Hosting Service"
+                    logo={logoGcp}
+                />
+            </TechStackCard>
+            <TechStackCard title="Digital Banking" subTitle="Backend | Web">
+                <TechStackCardItem
+                    title="Mifos"
+                    subTitle="Banking Platform"
+                    logo={logoDjango}
+                />
+                <TechStackCardItem
+                    title="Springboot"
+                    subTitle="Java Backend"
+                    logo={logoSpringBoot}
+                />
+                <TechStackCardItem
+                    title="Vue.js"
+                    subTitle="Javascript Frontend"
+                    logo={logoVue}
+                />
+                <TechStackCardItem
+                    title="MariaDB"
+                    subTitle="Relational Database"
+                    logo={logoMariaDBLight}
+                    logoDark={logoMariaDBDark}
+                />
+            </TechStackCard>
+            <TechStackCard
+                title="Personal Projects"
+                subTitle="Some Technologies I love working with"
+                class="col-span-3"
+            >
+                <div class="grid grid-cols-3">
+                    <TechStackCardItem
+                        title="Django"
+                        subTitle="For data-driven apps, both API and Monolith apps"
+                        logo={logoDjango}
+                    />
+                    <TechStackCardItem
+                        title="Astro"
+                        subTitle="For content-driven apps like this website"
+                        logo={logoDjango}
+                    />
+                    <TechStackCardItem
+                        title="Flutter"
+                        subTitle="For mobile apps"
+                        logo={logoDjango}
+                    />
+                    <TechStackCardItem
+                        title="HTMX"
+                        subTitle="I prefer the hypermedia approach for the web"
+                        logo={logoDjango}
+                    />
+                    <TechStackCardItem
+                        title="Alpine.js"
+                        subTitle="Minimal Javascript right in the HTML"
+                        logo={logoDjango}
+                    />
+                    <TechStackCardItem
+                        title="TailwindCSS"
+                        subTitle="Utility-based styling also right in the HTML"
+                        logo={logoDjango}
+                    />
+                    <TechStackCardItem
+                        title="Docker"
+                        subTitle="For both deployment and development—Dev Containers"
+                        logo={logoDjango}
+                    />
+                    <TechStackCardItem
+                        title="Hetzner"
+                        subTitle="My cloud provider of choice"
+                        logo={logoDjango}
+                    />
+                    <TechStackCardItem
+                        title="Cloudflare"
+                        subTitle="DNS and other nifty stuff"
+                        logo={logoDjango}
+                    />
+                </div>
+            </TechStackCard>
+        </div>
+    </section>
     <div class="flex flex-col">
         <div class="flex flex-col justify-center items-center h-64">
             <span class="text-6xl text-text-700 dark:text-text-300">

@@ -1,0 +1,33 @@
+---
+import TechStackCardItem from "./TechStackCardItem.astro";
+
+interface Props {
+    title: string;
+    subTitle?: string;
+    class?: string;
+}
+
+const { title, subTitle, class: className } = Astro.props;
+---
+
+<div class:list={["card p-4", className]}>
+    <div class="flex flex-col gap-y-3">
+        <div class="flex flex-col">
+            <span
+                class="font-body font-medium text-lg text-text-700 dark:text-text-300"
+            >
+                {title}
+            </span>
+            {
+                subTitle && (
+                    <span class="font-body text-text-700 dark:text-text-300">
+                        {subTitle}
+                    </span>
+                )
+            }
+        </div>
+        <div class="flex flex-col">
+            <slot />
+        </div>
+    </div>
+</div>

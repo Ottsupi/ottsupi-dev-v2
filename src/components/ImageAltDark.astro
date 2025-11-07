@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+    alt: string;
+    class: string;
+    src: ImageMetadata;
+    srcDark?: ImageMetadata;
+}
+
+const { alt, class: className, src, srcDark } = Astro.props;
+---
+
+<Image src={src} alt={alt} class:list={[className, srcDark && "dark:hidden"]} />
+
+{
+    srcDark && (
+        <Image
+            src={srcDark}
+            alt={alt}
+            class:list={[className, "hidden dark:block"]}
+        />
+    )
+}
