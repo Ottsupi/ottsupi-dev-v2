@@ -5,18 +5,22 @@ import BussinessCardSmall from "../components/bussiness_card/BussinessCardSmall.
 import TechStackCard from "../components/career_page/TechStackCard.astro";
 import TechStackCardItem from "../components/career_page/TechStackCardItem.astro";
 
-import logoAwsDark from "../assets/images/career_page/logo_aws_white.png";
-import logoAwsLight from "../assets/images/career_page/logo_aws_black.png";
-import logoDjango from "../assets/images/career_page/logo_django.png";
-import logoDocker from "../assets/images/career_page/logo_docker.png";
-import logoFlutter from "../assets/images/career_page/logo_flutter.png";
-import logoGcp from "../assets/images/career_page/logo_gcp.png";
-import logoMariaDBDark from "../assets/images/career_page/logo_mariadb_white.png";
-import logoMariaDBLight from "../assets/images/career_page/logo_mariadb_black.png";
-import logoPostgre from "../assets/images/career_page/logo_psql.png";
-import logoSpringBoot from "../assets/images/career_page/logo_springboot.png";
-import logoTailwind from "../assets/images/career_page/logo_tailwind.png";
-import logoVue from "../assets/images/career_page/logo_vue.png";
+import logoAngularjs from "../assets/images/tech_logos/logo_angularjs.png";
+import logoAstrojsDark from "../assets/images/tech_logos/logo_astrojs_white.png";
+import logoAstrojsLight from "../assets/images/tech_logos/logo_astrojs_black.png";
+import logoDjango from "../assets/images/tech_logos/logo_django.png";
+import logoDocker from "../assets/images/tech_logos/logo_docker.png";
+import logoFlutter from "../assets/images/tech_logos/logo_flutter.png";
+import logoGcp from "../assets/images/tech_logos/logo_gcp.png";
+import logoNetFramework from "../assets/images/tech_logos/logo_net_framework.png";
+import logoNopCommerce from "../assets/images/tech_logos/logo_nopcommerce.png";
+import logoMariaDBDark from "../assets/images/tech_logos/logo_mariadb_white.png";
+import logoMariaDBLight from "../assets/images/tech_logos/logo_mariadb_black.png";
+import logoMifos from "../assets/images/tech_logos/logo_mifos.png";
+import logoPostgre from "../assets/images/tech_logos/logo_psql.png";
+import logoSpringBoot from "../assets/images/tech_logos/logo_springboot.png";
+import logoSsms from "../assets/images/tech_logos/logo_ssms.png";
+import logoVue from "../assets/images/tech_logos/logo_vue.png";
 ---
 
 <MainLayout>
@@ -196,8 +200,8 @@ import logoVue from "../assets/images/career_page/logo_vue.png";
     </section>
 
     <!-- Tech Stack -->
-    <section class="max-w-lg mx-auto">
-        <div class="flex flex-col px-3 mb-4">
+    <section class="container mx-auto flex flex-col px-3 gap-y-3">
+        <div class="flex flex-col">
             <h2
                 class="font-header font-semibold text-text-700 dark:text-text-300 text-2xl"
             >
@@ -207,27 +211,27 @@ import logoVue from "../assets/images/career_page/logo_vue.png";
                 I'm always open to learn new things.
             </p>
         </div>
-        <div class="grid grid-cols-3 px-3 gap-3">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             <TechStackCard title="eCommerce App" subTitle="Backend | API | Web">
                 <TechStackCardItem
                     title="nopCommerce"
                     subTitle="eCommerce Platform"
-                    logo={logoDjango}
+                    logo={logoNopCommerce}
                 />
                 <TechStackCardItem
                     title=".Net Framework"
                     subTitle="C# Backend"
-                    logo={logoDjango}
+                    logo={logoNetFramework}
                 />
                 <TechStackCardItem
                     title="Angular.js"
                     subTitle="Javascript Frontend"
-                    logo={logoDjango}
+                    logo={logoAngularjs}
                 />
                 <TechStackCardItem
-                    title="MS SQL"
+                    title="MS SQL / MS SSMS"
                     subTitle="Relational Database"
-                    logo={logoDjango}
+                    logo={logoSsms}
                 />
             </TechStackCard>
             <TechStackCard
@@ -259,7 +263,7 @@ import logoVue from "../assets/images/career_page/logo_vue.png";
                 <TechStackCardItem
                     title="Mifos"
                     subTitle="Banking Platform"
-                    logo={logoDjango}
+                    logo={logoMifos}
                 />
                 <TechStackCardItem
                     title="Springboot"
@@ -280,54 +284,30 @@ import logoVue from "../assets/images/career_page/logo_vue.png";
             </TechStackCard>
             <TechStackCard
                 title="Personal Projects"
-                subTitle="Some Technologies I love working with"
-                class="col-span-3"
+                subTitle="Technologies I love working with"
+                class="col-span-1 lg:col-span-2"
             >
-                <div class="grid grid-cols-3">
-                    <TechStackCardItem
-                        title="Django"
-                        subTitle="For data-driven apps, both API and Monolith apps"
-                        logo={logoDjango}
-                    />
+                <div class="grid grid-cols-1 lg:grid-cols-2">
                     <TechStackCardItem
                         title="Astro"
-                        subTitle="For content-driven apps like this website"
+                        subTitle="Content-driven websites"
+                        logo={logoAstrojsLight}
+                        logoDark={logoAstrojsDark}
+                    />
+                    <TechStackCardItem
+                        title="Django"
+                        subTitle="Data-driven apps"
                         logo={logoDjango}
                     />
                     <TechStackCardItem
                         title="Flutter"
-                        subTitle="For mobile apps"
-                        logo={logoDjango}
-                    />
-                    <TechStackCardItem
-                        title="HTMX"
-                        subTitle="I prefer the hypermedia approach for the web"
-                        logo={logoDjango}
-                    />
-                    <TechStackCardItem
-                        title="Alpine.js"
-                        subTitle="Minimal Javascript right in the HTML"
-                        logo={logoDjango}
-                    />
-                    <TechStackCardItem
-                        title="TailwindCSS"
-                        subTitle="Utility-based styling also right in the HTML"
-                        logo={logoDjango}
+                        subTitle="Mobile apps"
+                        logo={logoFlutter}
                     />
                     <TechStackCardItem
                         title="Docker"
-                        subTitle="For both deployment and development—Dev Containers"
-                        logo={logoDjango}
-                    />
-                    <TechStackCardItem
-                        title="Hetzner"
-                        subTitle="My cloud provider of choice"
-                        logo={logoDjango}
-                    />
-                    <TechStackCardItem
-                        title="Cloudflare"
-                        subTitle="DNS and other nifty stuff"
-                        logo={logoDjango}
+                        subTitle="Deployment & development — Dev Containers"
+                        logo={logoDocker}
                     />
                 </div>
             </TechStackCard>
