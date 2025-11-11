@@ -19,17 +19,17 @@
     --container-lg: 64rem;
     /* --container-xl: 80rem; */
 
-    --color-text-50: hsl(230, 23%, 95%);
-    --color-text-100: hsl(235, 22%, 90%);
+    --color-text-50: hsl(230, 23%, 96%);
+    --color-text-100: hsl(235, 22%, 88%);
     --color-text-200: hsl(235, 22%, 80%);
-    --color-text-300: hsl(236, 22%, 70%);
-    --color-text-400: hsl(236, 22%, 60%);
+    --color-text-300: hsl(236, 22%, 72%);
+    --color-text-400: hsl(236, 22%, 62%);
     --color-text-500: hsl(235, 22%, 50%);
-    --color-text-600: hsl(236, 22%, 40%);
-    --color-text-700: hsl(236, 22%, 30%);
+    --color-text-600: hsl(236, 22%, 38%);
+    --color-text-700: hsl(236, 22%, 28%);
     --color-text-800: hsl(235, 22%, 20%);
-    --color-text-900: hsl(235, 22%, 10%);
-    --color-text-950: hsl(240, 23%, 5%);
+    --color-text-900: hsl(235, 22%, 12%);
+    --color-text-950: hsl(240, 23%, 4%);
 
     --color-background-50: hsl(216, 20%, 95%);
     --color-background-100: hsl(213, 18%, 90%);
@@ -89,45 +89,106 @@
     --font-code: "IBM Plex Mono", "mono";
 }
 
-@layer components {
-    .ott-typography {
+@utility prose-text {
+    --tw-prose-body: var(--color-text-800);
+    --tw-prose-headings: var(--color-text-900);
+    --tw-prose-lead: var(--color-text-700);
+    --tw-prose-links: var(--color-text-900);
+    --tw-prose-bold: var(--color-text-900);
+    --tw-prose-counters: var(--color-text-600);
+    --tw-prose-bullets: var(--color-text-400);
+    --tw-prose-hr: var(--color-text-300);
+    --tw-prose-quotes: var(--color-text-900);
+    --tw-prose-quote-borders: var(--color-text-300);
+    --tw-prose-captions: var(--color-text-700);
+    --tw-prose-code: var(--color-text-900);
+    --tw-prose-pre-code: var(--color-text-100);
+    --tw-prose-pre-bg: var(--color-text-900);
+    --tw-prose-th-borders: var(--color-text-300);
+    --tw-prose-td-borders: var(--color-text-200);
+    --tw-prose-invert-body: var(--color-text-200);
+    --tw-prose-invert-headings: var(--color-white);
+    --tw-prose-invert-lead: var(--color-pink-300);
+    --tw-prose-invert-links: var(--color-text-100);
+    --tw-prose-invert-bold: var(--color-text-100);
+    --tw-prose-invert-counters: var(--color-text-400);
+    --tw-prose-invert-bullets: var(--color-text-600);
+    --tw-prose-invert-hr: var(--color-text-700);
+    --tw-prose-invert-quotes: var(--color-text-100);
+    --tw-prose-invert-quote-borders: var(--color-text-700);
+    --tw-prose-invert-captions: var(--color-text-400);
+    --tw-prose-invert-code: var(--color-text-100);
+    --tw-prose-invert-pre-code: var(--color-text-300);
+    --tw-prose-invert-pre-bg: rgb(0 0 0 / 50%);
+    --tw-prose-invert-th-borders: var(--color-text-600);
+    --tw-prose-invert-td-borders: var(--color-text-700);
+}
+
+@layer utilities {
+    .ott-prose {
+        a,
+        li,
         p,
         span {
-            font-family: var(--font-sans);
-            font-size: 1.125rem;
-            color: var(--color-text-700);
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+
+        > :first-child {
+            /* Remove margin top of the first element in .ott-prose */
+            margin-top: 0em;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: normal;
+
+            color: var(--color-secondary-800);
+            &:hover {
+                color: var(--color-accent-600);
+            }
 
             @variant dark {
-                color: var(--color-text-300);
+                color: var(--color-secondary-200);
+                &:hover {
+                    color: var(--color-accent-400);
+                }
             }
+
+            transition-property: color, background-color, border-color,
+                outline-color, text-decoration-color, fill, stroke,
+                --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+            transition-timing-function: var(
+                --default-transition-timing-function
+            );
+            transition-duration: var(--default-transition-duration);
         }
 
         svg {
-            stroke: var(--color-text-700);
-            @variant dark {
-                stroke: var(--color-text-300);
-            }
+            margin-right: 0.25em;
         }
     }
+}
 
+@layer components {
     .card {
         display: flex;
         flex-direction: column;
         border-width: 2px;
         box-shadow: var(--shadow-md);
+
+        border-color: var(--color-background-500);
+        background-color: var(--color-background-100);
+
+        @variant dark {
+            background-color: var(--color-background-900);
+        }
+
         transition-property: color, background-color, border-color,
             outline-color, text-decoration-color, fill, stroke,
             --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
         transition-timing-function: var(--default-transition-timing-function);
         transition-duration: var(--default-transition-duration);
-
-        border-color: var(--color-background-400);
-        background-color: var(--color-background-100);
-
-        @variant dark {
-            border-color: var(--color-background-600);
-            background-color: var(--color-background-900);
-        }
     }
 }
 
