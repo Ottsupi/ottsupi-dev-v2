@@ -4,6 +4,7 @@ import BussinessCardFull from "../components/bussiness_card/BussinessCardFull.as
 import BussinessCardSmall from "../components/bussiness_card/BussinessCardSmall.astro";
 import TechStackCard from "../components/career_page/TechStackCard.astro";
 import TechStackCardItem from "../components/career_page/TechStackCardItem.astro";
+import WorkHistoryEntry from "../components/career_page/WorkHistoryEntry.astro";
 
 import logoAngularjs from "../assets/images/tech_logos/logo_angularjs.png";
 import logoAstrojsDark from "../assets/images/tech_logos/logo_astrojs_white.png";
@@ -44,7 +45,7 @@ import logoVue from "../assets/images/tech_logos/logo_vue.png";
             <div
                 class="flex flex-col justify-center items-center md:items-start gap-y-6"
             >
-                <div class="ott-typography">
+                <div class="text-text-800 dark:text-text-200">
                     <ul class="flex flex-col gap-y-2">
                         <li class="flex flex-row items-center gap-x-2">
                             <svg
@@ -200,24 +201,19 @@ import logoVue from "../assets/images/tech_logos/logo_vue.png";
     </section>
 
     <!-- Tech Stack -->
-    <section class="container mx-auto flex flex-col px-3 gap-y-3">
+    <section class="container mx-auto flex flex-col px-3 gap-y-6">
         <div class="flex flex-col">
             <h2
-                class="font-header font-semibold text-text-700 dark:text-text-300 text-2xl"
+                class="font-header font-semibold text-text-900 dark:text-text-100 text-2xl"
             >
                 Tech Stack
             </h2>
-            <p class="font-body text-text-700 dark:text-text-300">
+            <p class="font-body text-text-800 dark:text-text-200">
                 I'm always open to learn new things.
             </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             <TechStackCard title="eCommerce App" subTitle="Backend | API | Web">
-                <TechStackCardItem
-                    title="nopCommerce"
-                    subTitle="eCommerce Platform"
-                    logo={logoNopCommerce}
-                />
                 <TechStackCardItem
                     title=".Net Framework"
                     subTitle="C# Backend"
@@ -232,6 +228,11 @@ import logoVue from "../assets/images/tech_logos/logo_vue.png";
                     title="MS SQL / MS SSMS"
                     subTitle="Relational Database"
                     logo={logoSsms}
+                />
+                <TechStackCardItem
+                    title="nopCommerce"
+                    subTitle="eCommerce Platform"
+                    logo={logoNopCommerce}
                 />
             </TechStackCard>
             <TechStackCard
@@ -261,11 +262,6 @@ import logoVue from "../assets/images/tech_logos/logo_vue.png";
             </TechStackCard>
             <TechStackCard title="Digital Banking" subTitle="Backend | Web">
                 <TechStackCardItem
-                    title="Mifos"
-                    subTitle="Banking Platform"
-                    logo={logoMifos}
-                />
-                <TechStackCardItem
                     title="Springboot"
                     subTitle="Java Backend"
                     logo={logoSpringBoot}
@@ -280,6 +276,11 @@ import logoVue from "../assets/images/tech_logos/logo_vue.png";
                     subTitle="Relational Database"
                     logo={logoMariaDBLight}
                     logoDark={logoMariaDBDark}
+                />
+                <TechStackCardItem
+                    title="Mifos"
+                    subTitle="Banking Platform"
+                    logo={logoMifos}
                 />
             </TechStackCard>
             <TechStackCard
@@ -313,6 +314,132 @@ import logoVue from "../assets/images/tech_logos/logo_vue.png";
             </TechStackCard>
         </div>
     </section>
+
+    <hr class="border-0 my-8" />
+
+    <!-- Work History -->
+    <section class="container mx-auto flex flex-col px-3 gap-y-6">
+        <div class="flex flex-col">
+            <h2
+                class="font-header font-semibold text-text-900 dark:text-text-100 text-2xl"
+            >
+                Work Experience
+            </h2>
+        </div>
+        <div class="md:max-w-md mx-auto">
+            <div class="size-full grid grid-cols-1 md:grid-cols-3">
+                <WorkHistoryEntry
+                    title="Backend Developer"
+                    company="Blackfort"
+                    startDate="Jul 2025"
+                    endDate="Present"
+                >
+                    <slot slot="description">
+                        <p>Work Description</p>
+                        <p>Work Description</p>
+                        <p>Work Description</p>
+                    </slot>
+                    <slot slot="techStack">
+                        <span> .Net 8 </span>
+                        <span> Blazor MAUI </span>
+                    </slot>
+                </WorkHistoryEntry>
+                <WorkHistoryEntry
+                    title=".Net Developer"
+                    company="SD Solutions IT Outsourcing Inc."
+                    startDate="Apr 2025"
+                    endDate="Jun 2025"
+                >
+                    <slot slot="description">
+                        <p>Work description</p>
+                        <p>Work Description</p>
+                        <p>Work Description</p>
+                    </slot>
+                    <slot slot="techStack">
+                        <span> .Net 4.8 </span>
+                        <span> Angular.js </span>
+                        <span> MS SQL </span>
+                        <span> nopCommerce </span>
+                    </slot>
+                </WorkHistoryEntry>
+                <WorkHistoryEntry
+                    title="Full Stack Developer"
+                    company="LevEx International"
+                    startDate="Dec 2023"
+                    endDate="Mar 2025"
+                >
+                    <slot slot="description">
+                        <p>
+                            Responsible for the end-to-end development of the
+                            mobile app LevEx, a super app with the services
+                            utility bills payment and prepaid load.
+                        </p>
+                        <p>
+                            Enabled transactions worth 200,000 PHP across
+                            company branches in Luzon, Visayas, and Mindanao.
+                        </p>
+                        <a
+                            class="w-fit flex flex-row items-center group"
+                            target="_blank"
+                            href="https://youtu.be/znG8itkkp7g"
+                        >
+                            <span>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.25"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-external-link-icon lucide-external-link"
+                                    ><path d="M15 3h6v6"></path>
+                                    <path d="M10 14 21 3"></path>
+                                    <path
+                                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                    ></path>
+                                </svg>
+                            </span>
+                            Promotional video on Youtube
+                        </a>
+                    </slot>
+                    <slot slot="techStack">
+                        <span> Django </span>
+                        <span> Flutter </span>
+                        <span> PostgreSQL </span>
+                        <span> GCP </span>
+                    </slot>
+                </WorkHistoryEntry>
+                <WorkHistoryEntry
+                    title="Software Developer Intern"
+                    company="PearlPay Inc."
+                    startDate="Jun 2022"
+                    endDate="Nov 2022"
+                >
+                    <slot slot="description">
+                        <p>
+                            Mentored on full stack development. Implemented
+                            changes from frontend to backend, following best
+                            practices and frequent code reviews.
+                        </p>
+                        <p>
+                            Trained in Scrum Agile Methodology with a
+                            multicultural team to deliver a prototype product.
+                        </p>
+                    </slot>
+                    <slot slot="techStack">
+                        <span> Springboot </span>
+                        <span> Vue.js </span>
+                        <span> MariaDB </span>
+                        <span> Mifos </span>
+                    </slot>
+                </WorkHistoryEntry>
+            </div>
+        </div>
+    </section>
+
     <div class="flex flex-col">
         <div class="flex flex-col justify-center items-center h-64">
             <span class="text-6xl text-text-700 dark:text-text-300">
