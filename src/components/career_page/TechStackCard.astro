@@ -1,6 +1,4 @@
 ---
-import TechStackCardItem from "./TechStackCardItem.astro";
-
 interface Props {
     title: string;
     subTitle?: string;
@@ -13,16 +11,12 @@ const { title, subTitle, class: className } = Astro.props;
 <div class:list={["card p-4", className]}>
     <div class="flex flex-col gap-y-3">
         <div class="flex flex-col">
-            <span
-                class="font-body font-medium text-lg text-text-800 dark:text-text-200"
-            >
+            <span class="font-body font-medium text-lg text-color-body">
                 {title}
             </span>
             {
                 subTitle && (
-                    <span class="font-body text-text-800 dark:text-text-200">
-                        {subTitle}
-                    </span>
+                    <span class="font-body text-color-body">{subTitle}</span>
                 )
             }
         </div>
