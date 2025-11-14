@@ -345,7 +345,7 @@ import logoVue from "../assets/images/tech_logos/logo_vue.png";
                     </slot>
                 </WorkHistoryEntry>
                 <WorkHistoryEntry
-                    title=".Net Developer"
+                    title="Full Stack Developer"
                     company="SD Solutions IT Outsourcing Inc."
                     startDate="Apr 2025"
                     endDate="Jun 2025"
@@ -378,30 +378,24 @@ import logoVue from "../assets/images/tech_logos/logo_vue.png";
                             Enabled transactions worth 200,000 PHP across
                             company branches in Luzon, Visayas, and Mindanao.
                         </p>
-                        <a
-                            class="w-fit flex flex-row items-center group"
-                            target="_blank"
-                            href="https://youtu.be/znG8itkkp7g"
-                        >
-                            <span>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2.25"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    class="lucide lucide-external-link-icon lucide-external-link"
-                                    ><path d="M15 3h6v6"></path>
-                                    <path d="M10 14 21 3"></path>
-                                    <path
-                                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                                    ></path>
-                                </svg>
-                            </span>
+                        <a target="_blank" href="https://youtu.be/znG8itkkp7g">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.25"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-external-link-icon lucide-external-link"
+                                ><path d="M15 3h6v6"></path>
+                                <path d="M10 14 21 3"></path>
+                                <path
+                                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                ></path>
+                            </svg>
                             Promotional video on Youtube
                         </a>
                     </slot>
@@ -436,6 +430,116 @@ import logoVue from "../assets/images/tech_logos/logo_vue.png";
                         <span> Mifos </span>
                     </slot>
                 </WorkHistoryEntry>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-0 my-8" />
+
+    <!-- Academic Background Section -->
+    <section class="container mx-auto flex flex-col px-3 gap-y-6">
+        <div class="flex flex-col">
+            <h2 class="font-header font-semibold text-2xl text-color-heading">
+                Academic Background
+            </h2>
+        </div>
+        <div class="w-full md:max-w-md mx-auto">
+            <div class="flex flex-col p-4 border-b-2 border-background-500">
+                <div class="flex flex-row justify-between w-full">
+                    <div class="flex flex-col">
+                        <span class="font-body text-lg text-color-aside">
+                            Bachelor of Science in
+                        </span>
+                        <span class="font-body text-xl text-color-body">
+                            Computer Science
+                        </span>
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <span class="font-body text-lg text-color-aside">
+                            June 2019 &ndash; June 2023
+                        </span>
+                        <span class="font-body text-xl text-color-body">
+                            University of the East
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class:list={[
+                    "px-4 py-6",
+                    "border-b-2 border-dotted border-background-500",
+                    "prose dark:prose-invert prose-text ott-prose",
+                ]}
+            >
+                <span>Undergraduate Thesis:</span>
+                <h3 class="text-center font-medium my-3!">
+                    "Generating Workout Sessions using Bat Algorithm"
+                </h3>
+                <p>
+                    A web app written in PHP that generates a personalized
+                    workout routine using a machine learning algorithm
+                    implemented with Python and Numpy.
+                </p>
+                <span>Featured in:</span>
+                <ol>
+                    <li>
+                        International Conference in Emerging Trends on Computer
+                        Science 2023
+                    </li>
+                    <li>8th ueKamaynilaan National Conference</li>
+                    <li>UE CCSS Research Colloqium</li>
+                </ol>
+            </div>
+            <div class:list={["px-4 py-6", "flex flex-col gap-3"]}>
+                <span class="prose dark:prose-invert prose-text ott-prose">
+                    Positions of Responsibility:
+                </span>
+                <div
+                    class="flex flex-col border-s-2 ps-3 border-background-500"
+                >
+                    <span class="font-body font-medium text-lg text-color-body">
+                        Vice President of Publication
+                    </span>
+                    <span class="font-body text-color-body">
+                        Computer Students Society
+                    </span>
+                    <span class="font-body mt-2 text-color-body">
+                        2020 &ndash; 2022
+                    </span>
+                </div>
+                <div
+                    class="flex flex-col border-s-2 ps-3 border-background-500"
+                >
+                    <span class="font-body font-medium text-lg text-color-body">
+                        Assistant Vice President
+                    </span>
+                    <span class="font-body text-color-body">
+                        Computer Students Society
+                    </span>
+                    <span class="font-body mt-2 text-color-body">
+                        2019 &ndash; 2020
+                    </span>
+                </div>
+                <div
+                    class="flex flex-col border-s-2 ps-3 border-background-500"
+                >
+                    <span class="font-body font-medium text-lg text-color-body">
+                        Lead Researcher
+                    </span>
+                    <span class="font-body text-color-body">
+                        Undergraduate Thesis
+                    </span>
+                </div>
+                <div
+                    class="flex flex-col border-s-2 ps-3 border-background-500"
+                >
+                    <span class="font-body font-medium text-lg text-color-body">
+                        Lead Developer
+                    </span>
+                    <span class="font-body text-color-body">
+                        Software Engineering I & II
+                    </span>
+                </div>
             </div>
         </div>
     </section>
