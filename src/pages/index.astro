@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import BussinessCardFull from "../components/bussiness_card/BussinessCardFull.astro";
 import BussinessCardSmall from "../components/bussiness_card/BussinessCardSmall.astro";
+import Footer from "../components/footer/Footer.astro";
 import TechStackCard from "../components/career_page/TechStackCard.astro";
 import TechStackCardItem from "../components/career_page/TechStackCardItem.astro";
 import WorkHistoryEntry from "../components/career_page/WorkHistoryEntry.astro";
@@ -111,25 +112,6 @@ import logoVue from "../assets/images/tech_logos/logo_vue.png";
                                     rx="2"></rect></svg
                             >
                             <span>Full Stack Developer</span>
-                        </li>
-                        <li class="flex flex-row items-center gap-x-2">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="1.75"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="lucide lucide-history-icon lucide-history"
-                                ><path
-                                    d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
-                                ></path><path d="M3 3v5h5"></path><path
-                                    d="M12 7v5l4 2"></path></svg
-                            >
-                            <span>2 years</span>
                         </li>
                     </ul>
                 </div>
@@ -258,7 +240,10 @@ import logoVue from "../assets/images/tech_logos/logo_vue.png";
                     logo={logoGcp}
                 />
             </TechStackCard>
-            <TechStackCard title="Digital Banking" subTitle="Backend | Web">
+            <TechStackCard
+                title="Digital Banking Software"
+                subTitle="Backend | Web"
+            >
                 <TechStackCardItem
                     title="Springboot"
                     subTitle="Java Backend"
@@ -305,7 +290,7 @@ import logoVue from "../assets/images/tech_logos/logo_vue.png";
                     />
                     <TechStackCardItem
                         title="Docker"
-                        subTitle="Deployment & development — Dev Containers"
+                        subTitle="Deployment & Development"
                         logo={logoDocker}
                     />
                 </div>
@@ -546,37 +531,5 @@ import logoVue from "../assets/images/tech_logos/logo_vue.png";
             </div>
         </div>
     </section>
-
-    <div class="flex flex-col">
-        <div class="flex flex-col justify-center items-center h-64">
-            <span class="text-6xl text-text-700 dark:text-text-300">
-                Hello World!
-            </span>
-        </div>
-        <div class="flex flex-col justify-center items-center h-64">
-            <span class="text-6xl text-text-700 dark:text-text-300">
-                Hello World!
-            </span>
-        </div>
-        <div class="flex flex-col justify-center items-center h-64">
-            <span class="text-6xl text-text-700 dark:text-text-300">
-                Hello World!
-            </span>
-        </div>
-        <div class="flex flex-col justify-center items-center h-64">
-            <span class="text-6xl text-text-700 dark:text-text-300">
-                Hello World!
-            </span>
-        </div>
-        <div class="flex flex-col justify-center items-center h-64">
-            <span class="text-6xl text-text-700 dark:text-text-300">
-                Hello World!
-            </span>
-        </div>
-        <div class="flex flex-col justify-center items-center h-64">
-            <span class="text-6xl text-text-700 dark:text-text-300">
-                Hello World!
-            </span>
-        </div>
-    </div>
+    <Footer />
 </MainLayout>
